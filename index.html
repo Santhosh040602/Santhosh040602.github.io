@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disjoint Autoencoders for LoRa | IEEE MILCOM 2026</title>
+<meta name="description" content="A Lossy Compression Technique Using Disjoint Autoencoders for LoRa Communication. Santhosh Manoharan, Kang Gao, Subir Biswas. IEEE MILCOM 2026.">
+<meta property="og:title" content="A Lossy Compression Technique Using Disjoint Autoencoders for LoRa Communication">
+<meta property="og:description" content="Channel-robust image compression for long-range IoT radio. IEEE MILCOM 2026.">
+<meta property="og:image" content="figures/distance.png">
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #ffffff; --text: #1a1a1a; --muted: #555d66;
+    --accent: #18453b; --accent-soft: #e3ece8; --hl: #c85a0e; --line: #dcdcd8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111614; --card: #1a211e; --text: #e8ece9; --muted: #a3ada8;
+      --accent: #a8d5c2; --accent-soft: #22302b; --hl: #f0a060; --line: #2d3833;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 Georgia, "Times New Roman", serif;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 48px 20px 64px; }
+  .venue {
+    display: inline-block; font: 600 13px/1 system-ui, sans-serif; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--accent); background: var(--accent-soft);
+    padding: 8px 12px; border-radius: 999px;
+  }
+  h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.2; margin: 20px 0 14px; color: var(--accent); }
+  .authors { font-size: 19px; margin: 0; }
+  .affil { color: var(--muted); margin: 4px 0 0; font-size: 16px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 8px; }
+  .btn {
+    font: 600 15px/1 system-ui, sans-serif; text-decoration: none;
+    padding: 12px 18px; border-radius: 10px; border: 1.5px solid var(--accent);
+    color: var(--accent); background: transparent;
+  }
+  .btn.primary { background: var(--accent); color: var(--bg); }
+  .btn:hover { opacity: .85; }
+  .tagline {
+    font-size: clamp(20px, 3.2vw, 25px); line-height: 1.4; margin: 36px 0;
+    padding: 24px 26px; background: var(--card); border-left: 0; border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .tagline b { color: var(--accent); }
+  h2 {
+    font: 700 14px/1 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); margin: 44px 0 14px;
+  }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stat { background: var(--card); border-radius: 12px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .stat .big { font: 700 21px/1.25 system-ui, sans-serif; color: var(--accent); }
+  .stat .small { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  figure { margin: 0; background: #fff; border-radius: 12px; padding: 14px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  figure img { width: 100%; height: auto; display: block; }
+  figure.narrow img { max-width: 520px; margin: 0 auto; }
+  figcaption { color: #555d66; font-size: 14px; font-style: italic; text-align: center; margin-top: 8px; }
+  .abstract { text-align: justify; }
+  pre {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px; overflow-x: auto; font: 13.5px/1.5 ui-monospace, Menlo, Consolas, monospace;
+  }
+  .contact a { color: var(--accent); }
+  .notice { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); margin-top: 52px; padding-top: 18px; }
+  @media (max-width: 600px) { .stats { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <span class="venue">IEEE MILCOM 2026 · Track 5: AI/ML for Communication and Networking</span>
+
+  <h1>A Lossy Compression Technique Using Disjoint Autoencoders for LoRa Communication</h1>
+  <p class="authors"><strong>Santhosh Manoharan</strong>, Kang Gao, Subir Biswas</p>
+  <p class="affil">Networked Embedded and Wireless Systems (NeEWS) Laboratory, Dept. of ECE, Michigan State University</p>
+
+  <div class="buttons">
+    <a class="btn primary" href="paper.pdf">Paper (PDF)</a>
+    <a class="btn" href="slides.pdf">Slides</a>
+    <a class="btn" href="poster.pdf">Poster</a>
+    <a class="btn" href="#cite">Cite</a>
+  </div>
+
+  <p class="tagline">We trained image compression <b>to handle radio static</b>, so tiny sensors can send
+    <b>clear pictures from far away</b>, where regular images <b>fall apart</b>.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="big">Stays clear at 100 m</div><div class="small">Error holds at about 4% at every distance tested.</div></div>
+    <div class="stat"><div class="big">Halves classical error</div><div class="small">3.98% vs. 7.85% (PCA) at 100 m.</div></div>
+    <div class="stat"><div class="big">4× faster delivery</div><div class="small">15.5 s per image instead of 64.5 s.</div></div>
+  </div>
+
+  <h2>Key result</h2>
+  <figure>
+    <img src="figures/distance.png" alt="Reconstruction error versus distance: JPEG-XR, JPEG-LS and PCA rise sharply beyond 50 m, while channel-trained models stay near 4 percent out to 100 m.">
+    <figcaption>Reconstruction error vs. distance on a live 915 MHz LoRa link (n = 32, l = 24). Legend SNR = training SNR of the learnable channel.</figcaption>
+  </figure>
+
+  <h2>Abstract</h2>
+  <p class="abstract">Growing IoT deployments have created an urgent need for compression techniques that can operate within
+    tight bandwidth, low energy, and computational constraints of LoRa-based sensor networks. Sending high-dimensional
+    data, such as images, over LoRa remains difficult given its low data rates, susceptibility to channel noise, and the
+    limited processing capabilities of edge hardware. To address this, a disjoint autoencoder framework is presented in
+    which a differentiable LoRa channel module is incorporated into the training process, allowing the encoder and decoder
+    to learn latent representations that withstand real-world LoRa transmission impairments. After training, the encoder
+    and decoder are deployed at the transmitter and the receiver, supporting asymmetric operation that can be tailored to
+    specific bandwidth, complexity, and energy constraints. The framework is thoroughly assessed on the well-known CIFAR-10
+    dataset spanning a broad set of architectural configurations, and then physically tested on Raspberry Pi Zero 2W
+    devices in outdoor LoRa environments. The results show that the proposed framework produces substantially more
+    resilient reconstruction quality at extended transmission ranges than what conventional compression approaches can
+    achieve.</p>
+
+  <h2>Seeing the difference</h2>
+  <figure class="narrow">
+    <img src="figures/received.png" alt="Grid of received images at 10 cm, 10 m, 50 m and 100 m for four models; the untrained model degrades with distance while the minus 8 dB model looks the same at every distance.">
+    <figcaption>Received images at 10 cm, 10 m, 50 m, and 100 m for each training configuration.</figcaption>
+  </figure>
+
+  <h2 id="cite">Cite</h2>
+  <pre>@inproceedings{manoharan2026lossy,
+  author    = {Manoharan, Santhosh and Gao, Kang and Biswas, Subir},
+  title     = {A Lossy Compression Technique Using Disjoint Autoencoders
+               for {LoRa} Communication},
+  booktitle = {Proc. IEEE Military Communications Conference (MILCOM)},
+  address   = {National Capital Region, USA},
+  year      = {2026},
+  note      = {To appear}
+}</pre>
+
+  <h2>Contact</h2>
+  <p class="contact">
+    Santhosh Manoharan ·
+    <a href="mailto:manoha10@msu.edu">manoha10@msu.edu</a> ·
+    <a href="https://github.com/Santhosh040602">GitHub</a>
+    <!-- To add LinkedIn, uncomment the next line and put in your profile URL:
+    · <a href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a> -->
+  </p>
+
+  <p class="notice">© 2026 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for
+    all other uses, in any current or future media, including reprinting/republishing this material for advertising or
+    promotional purposes, creating new collective works, for resale or redistribution to servers or lists, or reuse of any
+    copyrighted component of this work in other works. The PDF provided here is the accepted version; the final published
+    version will be available on IEEE Xplore.</p>
+
+</main>
+</body>
+</html>
