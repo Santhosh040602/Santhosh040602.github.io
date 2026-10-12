@@ -60,10 +60,6 @@
   figure.narrow img { max-width: 520px; margin: 0 auto; }
   figcaption { color: #555d66; font-size: 14px; font-style: italic; text-align: center; margin-top: 8px; }
   .abstract { text-align: justify; }
-  pre {
-    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
-    padding: 16px; overflow-x: auto; font: 13.5px/1.5 ui-monospace, Menlo, Consolas, monospace;
-  }
   .contact a { color: var(--accent); }
   .notice { color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); margin-top: 52px; padding-top: 18px; }
   @media (max-width: 600px) { .stats { grid-template-columns: 1fr; } }
@@ -79,10 +75,9 @@
   <p class="affil">Networked Embedded and Wireless Systems (NeEWS) Laboratory, Dept. of ECE, Michigan State University</p>
 
   <div class="buttons">
-    <a class="btn primary" href="paper.pdf">Paper (PDF)</a>
-    <a class="btn" href="slides.pdf">Slides</a>
-    <a class="btn" href="poster.pdf">Poster</a>
-    <a class="btn" href="#cite">Cite</a>
+    <a class="btn primary" href="paper.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+    <a class="btn" href="slides.pdf" target="_blank" rel="noopener">Slides</a>
+    <a class="btn" href="poster.pdf" target="_blank" rel="noopener">Poster</a>
   </div>
 
   <p class="tagline">We trained image compression <b>to handle radio static</b>, so tiny sensors can send
@@ -120,24 +115,12 @@
     <figcaption>Received images at 10 cm, 10 m, 50 m, and 100 m for each training configuration.</figcaption>
   </figure>
 
-  <h2 id="cite">Cite</h2>
-  <pre>@inproceedings{manoharan2026lossy,
-  author    = {Manoharan, Santhosh and Gao, Kang and Biswas, Subir},
-  title     = {A Lossy Compression Technique Using Disjoint Autoencoders
-               for {LoRa} Communication},
-  booktitle = {Proc. IEEE Military Communications Conference (MILCOM)},
-  address   = {National Capital Region, USA},
-  year      = {2026},
-  note      = {To appear}
-}</pre>
-
   <h2>Contact</h2>
   <p class="contact">
     Santhosh Manoharan ·
     <a href="mailto:manoha10@msu.edu">manoha10@msu.edu</a> ·
-    <a href="https://github.com/Santhosh040602">GitHub</a>
-    <!-- To add LinkedIn, uncomment the next line and put in your profile URL:
-    · <a href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a> -->
+    <a href="https://github.com/Santhosh040602" target="_blank" rel="noopener">GitHub</a>
+    · <a href="https://www.linkedin.com/in/manoharan-santhosh/" target="_blank" rel="noopener">LinkedIn</a>
   </p>
 
   <p class="notice">© 2026 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for
